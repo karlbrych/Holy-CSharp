@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Holy-CS": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
