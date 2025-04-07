@@ -6,6 +6,8 @@ namespace HolyCSharp_Transpiler
     public class Transpiler
     {
         // Transpile an expression from HolyCS to C#
+        //HOLY shit this is a pile of bad code, nvm will fix later
+        //TODO: make some other basic arithmetics than sum
         public string TranspileExpression(string expression)
         {
             expression = expression.Trim();
@@ -24,7 +26,10 @@ namespace HolyCSharp_Transpiler
             {
                 return $"new HolyObject({num})";
             }
-
+            if (expression.StartsWith("HolyObject."))
+            {
+                return expression;
+            }
             // If the expression starts with new HolyObject it is already valid
             if (expression.StartsWith("new HolyObject"))
             {
@@ -34,7 +39,6 @@ namespace HolyCSharp_Transpiler
             // Otherwise assume it's a simple value and pass it to constructor
             return $"new HolyObject({expression})";
         }
-
         public string TranspileVariableDeclaration(string holycsCode)
         {
             // Example: "var x = new HolyObject(5);"
@@ -110,12 +114,17 @@ namespace HolyCSharp_Transpiler
                 {
                     csharpCode.AppendLine(TranspilePrint(trimmed));
                 }
+                else if (trimmed.StartsWith("new HolyObject"))
+                {
+                    // If the line is a constructor call, just append it.
+                    csharpCode.AppendLine(trimmed + ";");
+                }
                 else
                 {
-                    // For other expressions or statements, check if they contain a plus operator.
+                    
                     if (trimmed.Contains(" + "))
                     {
-                        // Avoid reprocessing expressions already handled in variable declarations.
+                        
                         csharpCode.AppendLine(TranspileExpression(trimmed) + ";");
                     }
                     else
