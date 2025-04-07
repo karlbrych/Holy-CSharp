@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "HolyCSharp-Transpiler": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}

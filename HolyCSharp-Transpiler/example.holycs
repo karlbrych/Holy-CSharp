@@ -1,0 +1,6 @@
+﻿var x = new HolyObject(5);
+var y = new HolyObject(10);
+var kokot = new HolyObject("jsi zmrd");
+var result = x + y + kokot;
+LinePrint('The result is ' + result);
+Print(kokot);
