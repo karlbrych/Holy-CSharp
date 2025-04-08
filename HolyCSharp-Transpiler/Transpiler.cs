@@ -7,7 +7,7 @@ namespace HolyCSharp_Transpiler
     {
         // Transpile an expression from HolyCS to C#
         //HOLY shit this is a pile of bad code, nvm will fix later
-        //TODO: make some other basic arithmetics than sum
+        //TODO: make some other basic arithmetics than sum, file organisation 
         public string TranspileExpression(string expression)
         {
             expression = expression.Trim();
