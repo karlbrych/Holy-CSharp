@@ -12,7 +12,7 @@ internal class Program
         Console.WriteLine("Generated C# Code:");
         Console.WriteLine(csharpCode);
         Console.WriteLine("");
-        Console.WriteLine("Original HolyCS code");
+        Console.WriteLine("Original HolyCS code:");
         Console.WriteLine(holycsCode);
         File.WriteAllLines("example.cs", new string[] { csharpCode });
     }

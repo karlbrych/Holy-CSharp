@@ -1,6 +1,8 @@
 ﻿var x = new HolyObject(5);
 var y = new HolyObject(10);
+var char = new HolyObject('a');
 var kokot = new HolyObject("jsi zmrd");
 var result = HolyObject.Sum(x,y);
-LinePrint('The result is ' + result);
-Print(kokot);
+var result2 = HolyObject.Sum(x, char);
+LinePrint("The result is " + result);
+Print("jsi strasna mrdka");

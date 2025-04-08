@@ -75,7 +75,7 @@ namespace HolyCSharp_Transpiler
                 return holycsCode;
             }
 
-            int start = holycsCode.IndexOf('(') + 1;
+            int start = holycsCode.IndexOf('(')+1;
             int end = holycsCode.IndexOf(')');
             string textToPrint = holycsCode.Substring(start, end - start).Trim().Trim('\'');
 
@@ -93,8 +93,8 @@ namespace HolyCSharp_Transpiler
                 return sb.ToString();
             }
             return isLine
-                ? $"Console.WriteLine(\"{textToPrint}\");"
-                : $"Console.Write(\"{textToPrint}\");";
+                ? $"Console.WriteLine({textToPrint});"
+                : $"Console.Write({textToPrint});";
         }
 
         // Transpileeeerrr!!!!
